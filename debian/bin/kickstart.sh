@@ -159,7 +159,6 @@ cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo >/dev/n
 cd build
 cpack -G DEB >/dev/null 2>&1
 dpkg -i nvim-linux64.deb >/dev/null 2>&1
-rm -rf ~/.config/nvim
 echo -e "${GREEN} neovim installed ${CLEAR}"
 cd
 
@@ -170,6 +169,8 @@ echo -e "${GREEN} lazyvim installed"
 
 cd ~/dotfiles
 cp .stow-global-ignore ~/.stow-global-ignore
+
+rm -rf ~/.config/nvim
 
 echo -e "Install script has now completed"
 echo -e "You may update these tools manually: restic, age"
