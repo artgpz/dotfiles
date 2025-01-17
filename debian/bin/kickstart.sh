@@ -159,18 +159,18 @@ cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo >/dev/n
 cd build
 cpack -G DEB >/dev/null 2>&1
 dpkg -i nvim-linux64.deb >/dev/null 2>&1
+rm -rf ~/.config/nvim
 echo -e "${GREEN} neovim installed ${CLEAR}"
 cd
 
 cd ~/downloads
 echo -e "installing lazyvim"
 git clone https://github.com/LazyVim/starter ~/.config/nvim >/dev/null 2>&1
-rm -rf ~/.config/nvim/.git
 echo -e "${GREEN} lazyvim installed"
 
-#remove ohmyzsh as its causing installation to hang
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" >/dev/null 2>&1
-# echo -e "Oh my zsh installed"
+cd ~/dotfiles
+cp .stow-global-ignore ~/.stow-global-ignore
+
 echo -e "Install script has now completed"
 echo -e "You may update these tools manually: restic, age"
 echo -e "To install node do: pnpm env use --global lts"
