@@ -9,7 +9,7 @@ cd ~
 2.- clone repo
 
 ```
-git clone https://github.com/artgpz/dotfiles.git
+git clone git@github.com:artgpz/dotfiles.git
 ```
 
 3.- go to dotfiles/debian directory and run kickstart
