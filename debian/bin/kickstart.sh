@@ -154,7 +154,7 @@ if [[ "$ARCH" = 'x86_64' ]]; then
 fi
 
 echo -e "installing neovim"
-git clone https://github.com/neovim/neovim --depth 1 >/dev/null 2>&1
+git clone https://github.com/neovim/neovim >/dev/null 2>&1
 cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo >/dev/null 2>&1
 cd build
 cpack -G DEB >/dev/null 2>&1
