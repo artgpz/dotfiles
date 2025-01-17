@@ -102,7 +102,7 @@ if [[ "$ARCH" = 'aarch64' ]]; then
   echo -e "installing lazygit"
   curl -LOsS https://github.com/jesseduffield/lazygit/releases/download/v0.45.0/lazygit_0.45.0_Linux_arm64.tar.gz
   tar -xf lazygit_0.45.0_Linux_arm64.tar.gz
-  mv lazygit /usr/local/lazygit
+  mv lazygit /usr/local/bin/lazygit
   echo -e "${GREEN} lazygit installed ${CLEAR}"
 
   echo -e "installing duf"
