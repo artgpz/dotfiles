@@ -1,0 +1,17 @@
+[Unit]
+Description = pocketbase service for I%
+
+[Service]
+Type           = simple
+User           = root
+Group          = root
+LimitNOFILE    = 4096
+Restart        = always
+RestartSec     = 5s
+StandardOutput = append:/var/log/pb/%I.log
+StandardError  = append:/var/log/pb/%I_error.log
+ExecStart      = /usr/local/bin/pocketbase serve --dir=${PB_DIR} --http=${PB_HTTP} --encryptionEnv=${PB_ENCRYPTION_KEY}
+EnvironmentFile= /etc/pocketbase/%I.env
+
+[Install]
+WantedBy = multi-user.target

@@ -1,0 +1,10 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.editor.refactoring",
+    "lazyvim.plugins.extras.util.octo"
+  ],
+  "news": {
+    "NEWS.md": "10960"
+  },
+  "version": 7
+}
