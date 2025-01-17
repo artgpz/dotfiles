@@ -3,7 +3,8 @@ How to use:
 1.- switch users and install git
 
 ```
-sudo -s root
+sudo -s
+apt update
 apt install git
 ```
 

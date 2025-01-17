@@ -19,8 +19,6 @@ echo -e "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 echo -e "${GREEN}oh-my-zsh installed${CLEAR}"
 
-ZSH_CUSTOM=
-
 echo -e "Installing zsh-autosuggestions"
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 echo -e "${GREEN}zsh-autosuggestions installed${CLEAR}"
@@ -36,5 +34,7 @@ echo -e "${GREEN}zsh-fast-syntax-highlighting installed${CLEAR}"
 echo -e "Installing zsh-autocomplete"
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
 echo -e "${GREEN}zsh-autocomplete installed${CLEAR}"
+
+cp ~/dotfiles/zsh/.zshrc ~/.zshrc
 
 echo -e "${BLUE}zsh config completed :)"
