@@ -1,28 +1,35 @@
 How to use:
 
-1.- go to root directory
+1.- switch users and install git
+
+```
+sudo -s root
+apt install git
+```
+
+2.- go to root directory
 
 ```
 cd ~
 ```
 
-2.- clone repo
+3.- clone repo
 
 ```
-git clone git@github.com:artgpz/dotfiles.git
+git clone https://github.com/artgpz/dotfiles.git
 ```
 
-3.- go to dotfiles/debian directory and run kickstart
+4.- go to dotfiles/debian/bin directory and run kickstart
 
 ```
-cd dotfiles/debian
-chmod +x kickstart # if needed for this and other scripts
+cd dotfiles/debian/bin
+chmod +x kickstart.sh # if needed for this and other scripts
 ./kickstart.sh
 ```
 
-4.- make a nice cuppa while you wait
+5.- make a nice cuppa while you wait
 
-5.- install the desired configurations
+6.- install the desired configurations
 
 ```
 cd ~/dotfiles
