@@ -8,8 +8,9 @@ USER=$1
 
 ohMyZsh() {
   echo $(whoami)
+  echo $HOME
   echo -e "Installing oh-my-zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
   echo -e "${GREEN}oh-my-zsh installed${CLEAR}"
 
   echo -e "Installing zsh-autosuggestions"
@@ -51,6 +52,7 @@ if [ -n "$USER" ]; then
   passwd $USER
   echo "Setting zsh as default shell for $USER"
   usermod --shell $(which zsh) $USER
+  cp /root/dotfiles/zsh/.zshrc /home/$USER/.zshrc
   cd /home/$USER
   su $USER -c "
   $(declare -f ohMyZsh)
