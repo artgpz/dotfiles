@@ -32,11 +32,11 @@ if ! getent group "$GROUP" &>/dev/null; then
 fi
 
 echo -e "${BLUE}Configuring websites folder for ${USER} user${CLEAR}"
-cd ~
+cd /home/${USER}/
 mkdir websites
 cd websites
 mkdir secrets
-cd ~
+cd /home/${USER}/
 chown -R "${USER}:${GROUP}" websites
 # need to validate there is an ssh key and try login at git@github.com
 echo -e "${GREEN}finished!${CLEAR}"
