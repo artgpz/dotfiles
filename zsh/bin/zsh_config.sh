@@ -37,4 +37,4 @@ echo -e "${GREEN}zsh-autocomplete installed${CLEAR}"
 
 cp ~/dotfiles/zsh/.zshrc ~/.zshrc
 
-echo -e "${BLUE}zsh config completed :)"
+echo -e "${BLUE}zsh config completed :)${CLEAR}"
