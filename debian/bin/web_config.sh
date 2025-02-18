@@ -21,12 +21,12 @@ else
 fi
 
 if ! id -u "$USER" &>/dev/null; then
-  echo "Error: User '$USER' does not exist"
+  echo "${RED}Error: User '$USER' does not exist${CLEAR}"
   exit 1
 fi
 
 if ! getent group "$GROUP" &>/dev/null; then
-  echo "Error: Group '$GROUP' does not exist"
+  echo "${RED}Error: Group '$GROUP' does not exist${CLEAR}"
   exit 1
 fi
 
