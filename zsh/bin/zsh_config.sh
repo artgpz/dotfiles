@@ -10,9 +10,15 @@ echo -e "Configuring zsh"
 echo -e "Installing zsh..."
 apt-get -o Dpkg::Use-Pty=0 -qq install -y zsh >/dev/null 2>&1
 echo -e "${GREEN} zsh installed ${CLEAR}"
-echo -e "making zsh default shell"
+echo -e "making zsh default shell, this may open zsh, exit to continue"
 chsh -s $(which zsh)
-sudo chsh -s $(which zsh)
+# sudo chsh -s $(which zsh)
+
+if [ -n "$1" ]; then
+  echo "Setting zsh as default shell for $1"
+  usermod --shell $(which zsh) $1
+fi
+
 echo -e "zsh set as default shell"
 
 echo -e "Installing oh-my-zsh"
