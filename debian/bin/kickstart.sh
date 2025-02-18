@@ -4,6 +4,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 CLEAR='\033[0m'
+USER=$1
 
 if [[ -e /etc/debian_version ]]; then
   echo -e "${BLUE}The Debian script will start now :) "
@@ -40,12 +41,6 @@ for i in $UTILITIES; do
   echo -e "$i installed"
 done
 
-#docker (remove as there are some issues installing docker)
-# $install -m 0755 -d /etc/apt/keyrings >/dev/null 2>&1
-# curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc >/dev/null 2>&1
-# chmod a+r /etc/apt/keyrings/docker.asc >/dev/null 2>&1
-# echo -e "Docker installed"
-
 mkdir ~/downloads
 cd ~/downloads
 
@@ -64,11 +59,6 @@ echo -e "pnpm installed"
 echo -e "insalling rclone"
 curl https://rclone.org/install.sh | bash >/dev/null 2>&1
 echo -e "rclone installed"
-
-#tpm (issues installing this)
-# if "test ! -d ~/.tmux/plugins/tpm" \
-#    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
-#
 
 echo -e "insalling lazydocker"
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
@@ -171,6 +161,12 @@ cd ~/dotfiles
 cp .stow-global-ignore ~/.stow-global-ignore
 
 rm -rf ~/.config/nvim
+
+if [ -n "$USER" ]; then
+  echo -e "insalling zoxide on ${USER}"
+  su $USER -c "curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh >/dev/null 2>&1"
+  echo -e "zoxide installed"
+fi
 
 echo -e "Install script has now completed"
 echo -e "You may update these tools manually: restic, age"
