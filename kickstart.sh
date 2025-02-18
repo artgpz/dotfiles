@@ -8,12 +8,12 @@ BLUE='\033[0;34m'
 CLEAR='\033[0m'
 
 if [ $# -ne 1 ]; then
-  echo "${RED}Usage: $0 user${CLEAR}"
+  echo -e "${RED}Usage: $0 user${CLEAR}"
   exit 1
 fi
 
 if ! id -u "$USER" &>/dev/null; then
-  echo "${RED}Error: User '$USER' does not exist${CLEAR}"
+  echo -e "${RED}Error: User '$USER' does not exist${CLEAR}"
   exit 1
 fi
 

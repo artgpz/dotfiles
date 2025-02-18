@@ -10,7 +10,8 @@ if [ $# -ne 1 ]; then
   exit 1
 fi
 
-OWNER="$1"
+OWNER=$1
+USER=$1
 
 if [[ "$owner" == *":"* ]]; then
   USER="${owner%%:*}"
@@ -21,12 +22,12 @@ else
 fi
 
 if ! id -u "$USER" &>/dev/null; then
-  echo "${RED}Error: User '$USER' does not exist${CLEAR}"
+  echo -e "${RED}Error: User '$USER' does not exist${CLEAR}"
   exit 1
 fi
 
 if ! getent group "$GROUP" &>/dev/null; then
-  echo "${RED}Error: Group '$GROUP' does not exist${CLEAR}"
+  echo -e "${RED}Error: Group '$GROUP' does not exist${CLEAR}"
   exit 1
 fi
 
