@@ -7,6 +7,7 @@ CLEAR='\033[0m'
 USER=$1
 
 ohMyZsh() {
+  echo $(whoami)
   echo -e "Installing oh-my-zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   echo -e "${GREEN}oh-my-zsh installed${CLEAR}"
@@ -50,10 +51,15 @@ if [ -n "$USER" ]; then
   passwd $USER
   echo "Setting zsh as default shell for $USER"
   usermod --shell $(which zsh) $USER
-  exit
+  cd /home/$USER
+  su $USER -c "
+  $(declare -f ohMyZsh)
+  ohMyZsh
+  "
   # sudo -su $USER
   # ohMyZsh
   # sudo -su root
 fi
 
+cd ~
 echo -e "${BLUE}zsh config completed :)${CLEAR}"
