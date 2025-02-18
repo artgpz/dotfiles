@@ -30,7 +30,7 @@ if ! getent group "$GROUP" &>/dev/null; then
   exit 1
 fi
 
-echo -e "${BLUE}configuring web for ${USER} user${CLEAR}"
+echo -e "${BLUE}Configuring websites folder for ${USER} user${CLEAR}"
 cd ~
 mkdir websites
 cd websites
