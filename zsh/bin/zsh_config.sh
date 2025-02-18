@@ -50,9 +50,10 @@ if [ -n "$USER" ]; then
   passwd $USER
   echo "Setting zsh as default shell for $USER"
   usermod --shell $(which zsh) $USER
-  sudo -su $USER
-  ohMyZsh
-  sudo -su root
+  exit
+  # sudo -su $USER
+  # ohMyZsh
+  # sudo -su root
 fi
 
 echo -e "${BLUE}zsh config completed :)${CLEAR}"
