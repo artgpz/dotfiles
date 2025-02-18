@@ -1,5 +1,8 @@
 #!/bin/bash
 
+OWNER=$1
+USER=$1
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
@@ -10,15 +13,12 @@ if [ $# -ne 1 ]; then
   exit 1
 fi
 
-OWNER=$1
-USER=$1
-
-if [[ "$owner" == *":"* ]]; then
-  USER="${owner%%:*}"
-  GROUP="${owner#*:}"
+if [[ "$OWNER" == *":"* ]]; then
+  USER="${OWNER%%:*}"
+  GROUP="${OWNER#*:}"
 else
-  USER="$owner"
-  GROUP="$user"
+  USER="$OWNER"
+  GROUP="$OWNER"
 fi
 
 if ! id -u "$USER" &>/dev/null; then
