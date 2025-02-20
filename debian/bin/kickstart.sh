@@ -17,7 +17,7 @@ fi
 #to remove verbosity installing with apt-get
 install="apt-get -o Dpkg::Use-Pty=0 -qq install -y"
 
-UTILITIES="git curl stow age postgresql-client wireguard tmux caddy xcaddy restic ca-certificates fuse3 build-essential ninja-build gettext cmake unzip curl rsync"
+UTILITIES="git curl stow age postgresql-client wireguard tmux caddy xcaddy restic ca-certificates fuse3 build-essential ninja-build gettext cmake unzip curl rsync fzf"
 ARCH=$(uname -m)
 
 echo -e "Updating and upgrading apt"
