@@ -148,7 +148,7 @@ git clone https://github.com/neovim/neovim >/dev/null 2>&1
 cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo >/dev/null 2>&1
 cd build
 cpack -G DEB >/dev/null 2>&1
-dpkg -i nvim-linux64.deb >/dev/null 2>&1
+dpkg -i nvim-linux-arm64.deb >/dev/null 2>&1
 echo -e "${GREEN} neovim installed ${CLEAR}"
 cd
 
