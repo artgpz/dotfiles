@@ -90,8 +90,8 @@ if [[ "$ARCH" = 'aarch64' ]]; then
   echo -e "${GREEN} dust installed ${CLEAR}"
 
   echo -e "installing lazygit"
-  curl -LOsS https://github.com/jesseduffield/lazygit/releases/download/v0.45.0/lazygit_0.45.0_Linux_arm64.tar.gz
-  tar -xf lazygit_0.45.0_Linux_arm64.tar.gz
+  curl -LOsS https://github.com/jesseduffield/lazygit/releases/download/v0.47.2/lazygit_0.47.2_Linux_arm64.tar.gz
+  tar -xf lazygit_0.47.2_Linux_arm64.tar.gz
   mv lazygit /usr/local/bin/lazygit
   echo -e "${GREEN} lazygit installed ${CLEAR}"
 
@@ -130,6 +130,12 @@ if [[ "$ARCH" = 'x86_64' ]]; then
   curl -LOsS https://github.com/bootandy/dust/releases/download/v1.1.1/du-dust_1.1.1-1_amd64.deb
   dpkg -i du-dust_1.1.1-1_amd64.deb >/dev/null 2>&1
   echo -e "${GREEN} dust installed ${CLEAR}"
+
+  echo -e "installing lazygit"
+  curl -LOsS https://github.com/jesseduffield/lazygit/releases/download/v0.47.2/lazygit_0.47.2_Linux_x86_64.tar.gz
+  tar -xf lazygit_0.47.2_Linux_x86_64.tar.gz
+  mv lazygit /usr/local/bin/lazygit
+  echo -e "${GREEN} lazygit installed ${CLEAR}"
 
   echo -e "installing duf"
   curl -LOsS https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
