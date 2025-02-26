@@ -20,7 +20,7 @@ install="apt-get -o Dpkg::Use-Pty=0 -qq install -y"
 UTILITIES="git curl stow age postgresql-client wireguard tmux caddy xcaddy restic ca-certificates fuse3 build-essential ninja-build gettext cmake unzip curl rsync fzf"
 ARCH=$(uname -m)
 
-echo -e "Updating and upgrading apt"
+echo -e "Updating and upgrading apt (you might need to press enter after 30s or so)"
 apt-get -qq update >/dev/null 2>&1
 apt-get -qq upgrade -y >/dev/null 2>&1
 echo -e "${GREEN} apt upgraded ${CLEAR}"
@@ -154,7 +154,13 @@ git clone https://github.com/neovim/neovim >/dev/null 2>&1
 cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo >/dev/null 2>&1
 cd build
 cpack -G DEB >/dev/null 2>&1
-dpkg -i nvim-linux-arm64.deb >/dev/null 2>&1
+
+if [[ "$ARCH" = 'x86_64' ]]; then
+  dpkg -i nvim-linux-x86_64.deb >/dev/null 2>&1
+fi
+if [[ "$ARCH" = 'aarch64' ]]; then
+  dpkg -i nvim-linux-arm64.deb >/dev/null 2>&1
+fi
 echo -e "${GREEN} neovim installed ${CLEAR}"
 cd
 
