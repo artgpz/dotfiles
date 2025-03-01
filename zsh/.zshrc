@@ -3,8 +3,8 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:/root/.local/bin"
-export PATH="$PATH:/root/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:/usr/local/bin"
 
 # Set name of the theme to load --- if set to "random", it will
