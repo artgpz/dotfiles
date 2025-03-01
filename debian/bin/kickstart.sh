@@ -174,7 +174,7 @@ cp .stow-global-ignore ~/.stow-global-ignore
 
 rm -rf ~/.config/nvim
 
-if [ -n "$USER" ]; then
+if [[ -n "$USER" ]]; then
   echo -e "insalling zoxide on ${USER}"
   su $USER -c "curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh >/dev/null 2>&1"
   echo -e "zoxide installed"
