@@ -21,7 +21,7 @@ UTILITIES="git curl stow age postgresql-client wireguard tmux caddy xcaddy resti
 ARCH=$(uname -m)
 
 echo -e "Updating and upgrading apt (you might need to press enter after 30s or so)"
-apt-get -qq update >/dev/null 2>&1
+apt-get -qq update -y >/dev/null 2>&1
 apt-get -qq upgrade -y >/dev/null 2>&1
 echo -e "${GREEN} apt upgraded ${CLEAR}"
 
