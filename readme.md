@@ -56,5 +56,19 @@ chmod +x kickstart.sh # if needed for this and other scripts
 cd ~/dotfiles
 stow neovim
 stow tmux
-stow zsh
+stow zsh (you may have to move .zshrc: mv ~/.zshrc ~/.old.zshrc)
+```
+
+7.- exit the root user and deploy user:
+
+```
+exit
+exit
+```
+
+8.- log back in again and install zoxide in the deploy user
+
+```
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
 ```
