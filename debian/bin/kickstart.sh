@@ -68,14 +68,14 @@ echo -e "${GREEN} lazydocker installed ${CLEAR}"
 if [[ "$ARCH" = 'aarch64' ]]; then
 
   echo -e "installing go"
-  curl -OLsS https://go.dev/dl/go1.23.1.linux-arm64.tar.gz
-  tar -C /usr/local -xf go1.23.1.linux-arm64.tar.gz
+  curl -OLsS https://go.dev/dl/go1.24.3.linux-arm64.tar.gz
+  tar -C /usr/local -xf go1.24.3.linux-arm64.tar.gz
   #NOTE: add export PATH=$PATH:/usr/local/go/bin
   echo -e "${GREEN} go installed ${CLEAR}"
 
   echo -e "installing sops"
-  curl -LOsS https://github.com/getsops/sops/releases/download/v3.9.0/sops_3.9.0_arm64.deb
-  dpkg -i sops_3.9.0_arm64.deb >/dev/null 2>&1
+  curl -LOsS https://github.com/getsops/sops/releases/download/v3.10.2/sops_3.10.2_arm64.deb
+  dpkg -i sops_3.10.2_arm64.deb >/dev/null 2>&1
   echo -e "${GREEN} sops installed ${CLEAR}"
 
   echo -e "installing bottom"
@@ -84,14 +84,14 @@ if [[ "$ARCH" = 'aarch64' ]]; then
   echo -e "${GREEN} bottom installed ${CLEAR}"
 
   echo -e "installing dust"
-  curl -LOsS https://github.com/bootandy/dust/releases/download/v1.1.1/dust-v1.1.1-aarch64-unknown-linux-musl.tar.gz
-  tar -xf dust-v1.1.1-aarch64-unknown-linux-musl.tar.gz
-  mv dust-v1.1.1-aarch64-unknown-linux-musl/ /usr/local/dust
+  curl -LOsS https://github.com/bootandy/dust/releases/download/v1.2.0/dust-v1.2.0-aarch64-unknown-linux-musl.tar.gz
+  tar -xf dust-v1.2.0-aarch64-unknown-linux-musl.tar.gz
+  mv dust-v1.2.0-aarch64-unknown-linux-musl/ /usr/local/dust
   echo -e "${GREEN} dust installed ${CLEAR}"
 
   echo -e "installing lazygit"
-  curl -LOsS https://github.com/jesseduffield/lazygit/releases/download/v0.47.2/lazygit_0.47.2_Linux_arm64.tar.gz
-  tar -xf lazygit_0.47.2_Linux_arm64.tar.gz
+  curl -LOsS https://github.com/jesseduffield/lazygit/releases/download/v0.50.0/lazygit_0.50.0_Linux_arm64.tar.gz
+  tar -xf lazygit_0.50.0_Linux_arm64.tar.gz
   mv lazygit /usr/local/bin/lazygit
   echo -e "${GREEN} lazygit installed ${CLEAR}"
 
@@ -111,14 +111,14 @@ fi
 if [[ "$ARCH" = 'x86_64' ]]; then
 
   echo -e "installing go"
-  curl -OLsS https://go.dev/dl/go1.23.1.linux-amd64.tar.gz
-  tar -C /usr/local -xf go1.23.1.linux-amd64.tar.gz
+  curl -OLsS https://go.dev/dl/go1.24.3.linux-amd64.tar.gz
+  tar -C /usr/local -xf go1.24.3.linux-amd64.tar.gz
   #NOTE: add export PATH=$PATH:/usr/local/go/bin
   echo -e "${GREEN} go installed ${CLEAR}"
 
   echo -e "installing sops"
-  curl -LOsS https://github.com/getsops/sops/releases/download/v3.9.0/sops_3.9.0_amd64.deb
-  dpkg -i sops_3.9.0_amd64.deb >/dev/null 2>&1
+  curl -LOsS https://github.com/getsops/sops/releases/download/v3.10.2/sops_3.10.2_amd64.deb
+  dpkg -i sops_3.10.2_amd64.deb >/dev/null 2>&1
   echo -e "${GREEN} sops installed ${CLEAR}"
 
   echo -e "installing bottom"
@@ -127,13 +127,13 @@ if [[ "$ARCH" = 'x86_64' ]]; then
   echo -e "${GREEN} bottom installed ${CLEAR}"
 
   echo -e "installing dust"
-  curl -LOsS https://github.com/bootandy/dust/releases/download/v1.1.1/du-dust_1.1.1-1_amd64.deb
-  dpkg -i du-dust_1.1.1-1_amd64.deb >/dev/null 2>&1
+  curl -LOsS https://github.com/bootandy/dust/releases/download/v1.2.0/du-dust_1.2.0-1_amd64.deb
+  dpkg -i du-dust_1.2.0-1_amd64.deb >/dev/null 2>&1
   echo -e "${GREEN} dust installed ${CLEAR}"
 
   echo -e "installing lazygit"
-  curl -LOsS https://github.com/jesseduffield/lazygit/releases/download/v0.47.2/lazygit_0.47.2_Linux_x86_64.tar.gz
-  tar -xf lazygit_0.47.2_Linux_x86_64.tar.gz
+  curl -LOsS https://github.com/jesseduffield/lazygit/releases/download/v0.50.0/lazygit_0.50.0_Linux_x86_64.tar.gz
+  tar -xf lazygit_0.50.0_Linux_x86_64.tar.gz
   mv lazygit /usr/local/bin/lazygit
   echo -e "${GREEN} lazygit installed ${CLEAR}"
 
