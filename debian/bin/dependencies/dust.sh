@@ -14,6 +14,6 @@ if [[ "$arch" != 'none' ]]; then
   echo -e "installing dust"
   curl -LOsS https://github.com/bootandy/dust/releases/download/v$VERSION/dust-v$VERSION-$arch-unknown-linux-musl.tar.gz
   tar -xf dust-v$VERSION-$arch-unknown-linux-musl.tar.gz
-  mv dust-v$VERSION-$arch-unknown-linux-musl/ /usr/local/dust
-  echo -e "${} dust installed ${CLEAR}"
+  mv dust-v$VERSION-$arch-unknown-linux-musl/dust /usr/local/dust
+  echo -e "${GREEN} dust installed ${CLEAR}"
 fi
