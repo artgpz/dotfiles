@@ -1,8 +1,9 @@
 #!/bin/bash
 
-VERSION=0.11.4
+VERSION=0.11.5
 arch=none
-if [[ "$ARCH" = 'aarch64' ]]; then
+
+if [[ "$ARCH" = $arch'aarch64' ]]; then
   arch=linux-arm64
 fi
 
@@ -13,8 +14,7 @@ fi
 if [[ "$arch" != 'none' ]]; then
   echo -e "installing nvim"
   curl -OLsS https://github.com/neovim/neovim/releases/download/v$VERSION/nvim-$arch.tar.gz
-  tar xzvf nvim-linux-arm64.tar.gz
-  mv ./nvim-linux-arm64/bin/nvim /usr/local/bin
-  #NOTE: add export PATH=$PATH:/usr/local/go/bin
+  sudo rm -rf /opt/nvim-$arch
+  sudo tar -C /opt -xzf nvim-$arch.tar.gz
   echo -e "${GREEN} nvim installed ${CLEAR}"
 fi
