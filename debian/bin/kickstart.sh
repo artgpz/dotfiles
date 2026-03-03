@@ -67,14 +67,14 @@ echo -e "insalling lazydocker"
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 echo -e "${GREEN} lazydocker installed ${CLEAR}"
 
-$SCRIPTDIR/dependencies/go.sh
-$SCRIPTDIR/dependencies/sops.sh
-$SCRIPTDIR/dependencies/bottom.sh
-$SCRIPTDIR/dependencies/duf.sh
-$SCRIPTDIR/dependencies/dust.sh
-$SCRIPTDIR/dependencies/lazygit.sh
-$SCRIPTDIR/dependencies/lsd.sh
-$SCRIPTDIR/dependencies/nvim.sh
+./$SCRIPTDIR/dependencies/go.sh
+./$SCRIPTDIR/dependencies/sops.sh
+./$SCRIPTDIR/dependencies/bottom.sh
+./$SCRIPTDIR/dependencies/duf.sh
+./$SCRIPTDIR/dependencies/dust.sh
+./$SCRIPTDIR/dependencies/lazygit.sh
+./$SCRIPTDIR/dependencies/lsd.sh
+./$SCRIPTDIR/dependencies/nvim.sh
 
 cp ~/dotfiles/debian/.zshrc ~/.zshrc
 
