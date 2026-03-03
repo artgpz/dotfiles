@@ -6,7 +6,7 @@ export BLUE='\033[0;34m'
 export CLEAR='\033[0m'
 export USER=$1
 
-SCRIPTDIR="$(dirname "$0")"
+SCRIPTDIR="$(cd "$(dirname "$0")" && pwd)"
 
 if [[ -e /etc/debian_version ]]; then
   echo -e "${BLUE}The Debian script will start now :) "
@@ -17,7 +17,7 @@ else
 fi
 
 # Get APT dependencies
-$SCRIPTDIR/dependencies/apt.sh
+./$SCRIPTDIR/dependencies/apt.sh
 
 #to remove verbosity installing with apt-get
 install="apt-get -o Dpkg::Use-Pty=0 -qq install -y"
