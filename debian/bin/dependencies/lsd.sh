@@ -14,7 +14,7 @@ fi
 
 if [[ "$arch" != 'none' ]]; then
   echo -e "installing lsd"
-  curl -LOsS https://github.com/lsd-rs/lsd/releases/download/v$VERSION/lsd_$VERSION_$arch.deb
-  dpkg -i lsd_$VERSION_$arch.deb >/dev/null 2>&1
+  curl -LOsS https://github.com/lsd-rs/lsd/releases/download/v$VERSION/lsd_$VERSION\_$arch.deb
+  dpkg -i lsd_$VERSION\_$arch.deb >/dev/null 2>&1
   echo -e "${GREEN} lsd installed ${CLEAR}"
 fi

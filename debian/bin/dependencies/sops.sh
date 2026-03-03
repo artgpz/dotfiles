@@ -12,7 +12,7 @@ fi
 
 if [[ "$arch" != 'none' ]]; then
   echo -e "installing sops"
-  curl -LOsS https://github.com/getsops/sops/releases/download/v$VERSION/sops_$VERSION_$arch.deb
-  dpkg -i sops_$VERSION_$arch.deb >/dev/null 2>&1
+  curl -LOsS https://github.com/getsops/sops/releases/download/v$VERSION/sops_$VERSION\_$arch.deb
+  dpkg -i sops_$VERSION\_$arch.deb >/dev/null 2>&1
   echo -e "${GREEN} sops installed ${CLEAR}"
 fi

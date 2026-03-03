@@ -13,7 +13,7 @@ fi
 
 if [[ "$arch" != 'none' ]]; then
   echo -e "installing lazygit"
-  curl -LOsS https://github.com/jesseduffield/lazygit/releases/download/v$VERSION/lazygit_$VERSION_$arch.tar.gz
+  curl -LOsS https://github.com/jesseduffield/lazygit/releases/download/v$VERSION/lazygit_$VERSION\_$arch.tar.gz
   tar -xf lazygit_$VERSION\_$arch.tar.gz
   mv lazygit /usr/local/bin/lazygit
   echo -e "${GREEN} lazygit installed ${CLEAR}"

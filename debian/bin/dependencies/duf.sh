@@ -12,7 +12,7 @@ fi
 
 if [[ "$arch" != 'none' ]]; then
   echo -e "installing duf"
-  curl -LOsS https://github.com/muesli/duf/releases/download/v$VERSION/duf_$VERSION_$arch.deb
-  dpkg -i duf_$VERSION_$arch.deb >/dev/null 2>&1
+  curl -LOsS https://github.com/muesli/duf/releases/download/v$VERSION/duf_$VERSION\_$arch.deb
+  dpkg -i duf_$VERSION\_$arch.deb >/dev/null 2>&1
   echo -e "${GREEN} duf installed ${CLEAR}"
 fi
