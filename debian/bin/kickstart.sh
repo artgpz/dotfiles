@@ -7,6 +7,7 @@ export CLEAR='\033[0m'
 export USER=$1
 
 SCRIPTDIR=~/dotfiles/debian/bin/dependencies
+UTILITIES="git curl stow age postgresql-client wireguard tmux caddy xcaddy restic ca-certificates fuse3 build-essential ninja-build gettext cmake unzip curl rsync fzf"
 
 if [[ -e /etc/debian_version ]]; then
   echo -e "${BLUE}The Debian script will start now :) "
@@ -16,11 +17,7 @@ else
   exit 1
 fi
 
-# Get APT dependencies
-$SCRIPTDIR/apt.sh
-
 #to remove verbosity installing with apt-get
-echo -e "Installing APT dependencies"
 install="apt-get -o Dpkg::Use-Pty=0 -qq install -y"
 export ARCH=$(uname -m)
 
@@ -39,6 +36,7 @@ curl -1sLfS 'https://dl.cloudsmith.io/public/caddy/xcaddy/debian.deb.txt' | tee 
 apt-get update >/dev/null 2>&1
 
 #utilities
+
 echo -e "Utilities to install: $UTILITIES"
 for i in $UTILITIES; do
   $install $i >/dev/null 2>&1
