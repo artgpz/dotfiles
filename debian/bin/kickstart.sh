@@ -6,6 +6,8 @@ export BLUE='\033[0;34m'
 export CLEAR='\033[0m'
 export USER=$1
 
+SCRIPTDIR="$(dirname "$0")"
+
 if [[ -e /etc/debian_version ]]; then
   echo -e "${BLUE}The Debian script will start now :) "
   echo -e "Might take a while, so be patient ${CLEAR}"
@@ -15,7 +17,8 @@ else
 fi
 
 # Get APT dependencies
-./dependencies/apt.sh
+$SCRIPTDIR/dependencies/apt.sh
+
 #to remove verbosity installing with apt-get
 install="apt-get -o Dpkg::Use-Pty=0 -qq install -y"
 export ARCH=$(uname -m)
@@ -64,14 +67,16 @@ echo -e "insalling lazydocker"
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 echo -e "${GREEN} lazydocker installed ${CLEAR}"
 
-./dependencies/go.sh
-./dependencies/sops.sh
-./dependencies/bottom.sh
-./dependencies/duf.sh
-./dependencies/dust.sh
-./dependencies/lazygit.sh
-./dependencies/lsd.sh
-./dependencies/nvim.sh
+$SCRIPTDIR/dependencies/go.sh
+$SCRIPTDIR/dependencies/sops.sh
+$SCRIPTDIR/dependencies/bottom.sh
+$SCRIPTDIR/dependencies/duf.sh
+$SCRIPTDIR/dependencies/dust.sh
+$SCRIPTDIR/dependencies/lazygit.sh
+$SCRIPTDIR/dependencies/lsd.sh
+$SCRIPTDIR/dependencies/nvim.sh
+
+cp ~/dotfiles/debian/.zshrc ~/.zshrc
 
 cd ~/downloads
 echo -e "installing lazyvim"
