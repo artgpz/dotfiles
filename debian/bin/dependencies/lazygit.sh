@@ -1,6 +1,5 @@
 #!/bin/bash
 
-https://github.com/jesseduffield/lazygit/releases/download/v0.59.0/lazygit_0.59.0_linux_x86_64.tar.gz
 VERSION=0.59.0
 arch=none
 if [[ "$ARCH" = 'aarch64' ]]; then
