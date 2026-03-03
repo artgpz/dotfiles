@@ -14,7 +14,7 @@ fi
 if [[ "$arch" != 'none' ]]; then
   echo -e "installing nvim"
   curl -OLsS https://github.com/neovim/neovim/releases/download/v$VERSION/nvim-$arch.tar.gz
-  tar xzvf nvim-linux-arm64.tar.gz
-  mv ./nvim-linux-arm64/bin/nvim /usr/local/bin
+  tar xzvf nvim-$arch.tar.gz
+  mv ./nvim-$arch/bin/nvim /usr/local/bin
   echo -e "${GREEN} nvim installed ${CLEAR}"
 fi
