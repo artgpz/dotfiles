@@ -6,7 +6,7 @@ export BLUE='\033[0;34m'
 export CLEAR='\033[0m'
 export USER=$1
 
-SCRIPTDIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPTDIR=~/dotfiles/debian/bin/dependencies
 
 if [[ -e /etc/debian_version ]]; then
   echo -e "${BLUE}The Debian script will start now :) "
@@ -17,7 +17,7 @@ else
 fi
 
 # Get APT dependencies
-./$SCRIPTDIR/dependencies/apt.sh
+$SCRIPTDIR/apt.sh
 
 #to remove verbosity installing with apt-get
 install="apt-get -o Dpkg::Use-Pty=0 -qq install -y"
@@ -67,14 +67,14 @@ echo -e "insalling lazydocker"
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 echo -e "${GREEN} lazydocker installed ${CLEAR}"
 
-./$SCRIPTDIR/dependencies/go.sh
-./$SCRIPTDIR/dependencies/sops.sh
-./$SCRIPTDIR/dependencies/bottom.sh
-./$SCRIPTDIR/dependencies/duf.sh
-./$SCRIPTDIR/dependencies/dust.sh
-./$SCRIPTDIR/dependencies/lazygit.sh
-./$SCRIPTDIR/dependencies/lsd.sh
-./$SCRIPTDIR/dependencies/nvim.sh
+$SCRIPTDIR/go.sh
+$SCRIPTDIR/sops.sh
+$SCRIPTDIR/bottom.sh
+$SCRIPTDIR/duf.sh
+$SCRIPTDIR/dust.sh
+$SCRIPTDIR/lazygit.sh
+$SCRIPTDIR/lsd.sh
+$SCRIPTDIR/nvim.sh
 
 cp ~/dotfiles/debian/.zshrc ~/.zshrc
 
