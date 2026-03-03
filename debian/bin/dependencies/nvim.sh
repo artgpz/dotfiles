@@ -2,7 +2,8 @@
 
 VERSION=0.11.6
 arch=none
-if [[ "$ARCH" = 'aarch64' ]]; then
+
+if [[ "$ARCH" = $arch'aarch64' ]]; then
   arch=linux-arm64
 fi
 
