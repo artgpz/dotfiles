@@ -20,6 +20,7 @@ fi
 $SCRIPTDIR/apt.sh
 
 #to remove verbosity installing with apt-get
+echo -e "Installing APT dependencies"
 install="apt-get -o Dpkg::Use-Pty=0 -qq install -y"
 export ARCH=$(uname -m)
 
