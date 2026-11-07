@@ -95,4 +95,4 @@ fi
 
 echo -e "Install script has now completed"
 echo -e "You may update these tools manually: restic, age"
-echo -e "To install node do: pnpm env use --global lts"
+echo -e "To install node do: pnpm runtime set node lts -g"
