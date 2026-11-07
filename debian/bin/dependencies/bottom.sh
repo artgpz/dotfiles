@@ -1,6 +1,8 @@
 #!/bin/bash
 
-VERSION=0.12.3
+# https://github.com/ClementTsang/bottom
+
+VERSION=0.15.0
 arch=none
 if [[ "$ARCH" = 'aarch64' ]]; then
   arch=arm64

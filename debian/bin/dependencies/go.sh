@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=1.26.0
+VERSION=1.27.3
 arch=none
 if [[ "$ARCH" = 'aarch64' ]]; then
   arch=linux-arm64

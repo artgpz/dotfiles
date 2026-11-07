@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=0.11.6
+VERSION=0.12.6
 arch=none
 
 if [[ "$ARCH" = $arch'aarch64' ]]; then
